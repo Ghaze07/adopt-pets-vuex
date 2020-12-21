@@ -4,7 +4,7 @@
         <b-table striped hover :items="cats">
             <template slot="name" slot-scope="data">
 
-                <router-link :to="`/pets/${data.index}`">
+                <router-link :to="`/pets/cats${data.index}`">
                     {{ data.value }}
                 </router-link>
             </template>
