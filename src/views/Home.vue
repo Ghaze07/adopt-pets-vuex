@@ -1,7 +1,15 @@
 <template>
   <div class="home">
     <h1>Adopt a New Best Friend.</h1>
-    {{animalsCount}}
+    <div class="row">
+      <div class="col col-md-6">
+       <h5> Total Pets: {{animalsCount}}</h5>
+      </div>
+      <div class="col col-md-6">
+        <h5>Number of cats: {{getAllCats.length}}</h5>
+      </div>
+    </div>
+
     <button @click="togglePetForm" class="btn btn-primary">Add Pet</button>
 
     <b-form @submit.prevent="handleSubmit" v-if="showPetForm">
@@ -34,8 +42,8 @@
         ></b-form-input>
       </b-form-group>
 
-      <b-button type="submit" variant="primary">Submit</b-button>
-      <b-button type="reset" variant="danger">Reset</b-button>
+      <b-button type="submit" class="btn btn-success btn-sm mr-1" variant="success">Submit</b-button>
+      <b-button type="reset" class="btn btn-danger btn-sm mr-1" variant="danger">Reset</b-button>
     </b-form>
   </div>
 </template>
@@ -56,7 +64,8 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'animalsCount'
+      'animalsCount',
+      'getAllCats'
     ])
   },
   methods: {
